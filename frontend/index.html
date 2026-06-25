@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Fullstack Hello World</title>
+    <!-- Modern Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Dynamic Glowing background meshes -->
+    <div class="glow-bg">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Main Card -->
+        <main class="glass-card">
+            <!-- Header section with status -->
+            <header class="card-header">
+                <div class="badge-container">
+                    <span class="status-badge" id="backend-status-badge">
+                        <span class="status-dot"></span>
+                        <span class="status-text" id="backend-status-text">Checking Backend...</span>
+                    </span>
+                </div>
+                <h1 class="app-title">Fullstack Connect</h1>
+                <p class="app-subtitle">A premium Dockerized Hello World demo</p>
+            </header>
+
+            <!-- Message Showcase -->
+            <section class="message-display">
+                <div class="message-container">
+                    <div class="quote-icon">“</div>
+                    <div class="hello-message" id="hello-message">Connecting to the grid...</div>
+                    <div class="timestamp-display" id="timestamp-display">Waiting for server timestamp...</div>
+                </div>
+            </section>
+
+            <!-- Actions -->
+            <section class="card-actions">
+                <button class="btn btn-primary" id="fetch-btn">
+                    <span class="btn-text">Refresh Data</span>
+                    <!-- Spinning Loader Icon -->
+                    <svg class="spinner" viewBox="0 0 24 24" id="btn-spinner">
+                        <circle class="path" cx="12" cy="12" r="10" fill="none" stroke-width="3"></circle>
+                    </svg>
+                </button>
+            </section>
+
+            <!-- Developer / API Inspector Panel -->
+            <footer class="card-inspector">
+                <details class="inspector-details" open>
+                    <summary class="inspector-summary">
+                        <span>API Details & Response Payload</span>
+                        <span class="latency-pill" id="latency-display">-- ms</span>
+                    </summary>
+                    <div class="inspector-content">
+                        <div class="meta-row">
+                            <span class="meta-label">Request URL:</span>
+                            <span class="meta-value code-text" id="request-url">GET /api/hello</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">HTTP Status:</span>
+                            <span class="meta-value code-text" id="response-status">--</span>
+                        </div>
+                        <div class="payload-header">Response JSON:</div>
+                        <pre class="payload-box"><code class="code-text" id="json-payload">{
+  "status": "loading"
+}</code></pre>
+                    </div>
+                </details>
+            </footer>
+        </main>
+
+        <!-- Footer / Docker badges -->
+        <footer class="app-footer">
+            <div class="tech-stack-row">
+                <span class="tech-tag nginx">Nginx</span>
+                <span class="tech-tag python">Python FastAPI</span>
+                <span class="tech-tag docker">Docker</span>
+            </div>
+            <p class="copyright">Built with premium styling & Docker Compose</p>
+        </footer>
+    </div>
+
+    <!-- Main Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
